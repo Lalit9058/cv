@@ -6,8 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .img3{
+        height:10px;
+        width:30px;
+    }
+    .img3:hover{
+            
+        height:100px;
+        width:100px;
+
+    }
+</style>
 <body>
-    <input type = "file" onchange = "readURL(this)" accept="Image/*">
-    
+    <input  id = "button" type = "file" onchange = "readURL(this)"accept="Image/*">
+    <!-- <button  onclick = "add();" >add</button> -->
+    <table>
+        <tr>
+            <th>image</th>
+            <th>name</th>
+        </tr>
+        <tr>
+            <td><img class = "img3" src = "" id = "img"></td>
+            <td>lalit mehta</td>
+        </tr>
+    </table>
+   
+
+    <script>
+var img = document.getElementById("img");
+var button = document.getElementById("button");
+button.addEventListener('change',function(){
+img.src = URL.createObjectURL(this.files[0]);
+
+})
+ 
+
+</script>
 </body>
 </html>
